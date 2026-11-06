@@ -1,4 +1,3 @@
-/* 1. ПЕРЕМЕННЫЕ (Цвета сайта) */
 :root {
   --primary: #0F5257;
   --bg: #FFFFFF;
@@ -13,7 +12,7 @@ body.dark-theme {
   --text-gray: #CBD5E0;
 }
 
-/* 2. БАЗОВЫЕ НАСТРОЙКИ (Сброс отступов) */
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +20,7 @@ body.dark-theme {
 }
 
 html {
-  scroll-behavior: smooth; /* Плавная прокрутка к секциям */
+  scroll-behavior: smooth; 
 }
 
 body {
@@ -29,10 +28,9 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.5;
-  overflow-x: hidden; /* Скрываем случайный скролл по горизонтали */
+  overflow-x: hidden; 
 }
 
-/* Ограничитель ширины сайта по центру */
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -44,7 +42,6 @@ img {
   display: block;
 }
 
-/* Скрытие текста (для доступности) */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -55,7 +52,6 @@ img {
   border: 0;
 }
 
-/* 3. ШАПКА И НАВИГАЦИЯ */
 .header {
   background-color: var(--bg);
   padding: 20px 0;
@@ -115,7 +111,6 @@ img {
   display: none;
 }
 
-/* 4. КНОПКИ */
 .btn {
   display: inline-block;
   padding: 10px 24px;
@@ -139,7 +134,6 @@ img {
   border: 1px solid var(--primary);
 }
 
-/* 5. СЕКЦИИ И СЕТКА (Flexbox) */
 .hero, .about__row, .contact__row {
   display: flex;
   justify-content: space-between;
@@ -152,7 +146,7 @@ img {
 }
 
 .hero__col, .about__col, .contact__col {
-  flex: 1; /* Колонки занимают равное место */
+  flex: 1;  
 }
 
 .sub-badge {
@@ -201,7 +195,6 @@ img {
   right: 15px; 
 }
 
-/* 6. ОБО МНЕ И КОНТАКТЫ */
 .about, .contact {
   padding: 40px 0 60px 0;
 }
@@ -245,7 +238,6 @@ img {
   font-weight: 600;
 }
 
-/* 7. ФОРМА */
 .form-row {
   display: flex;
   gap: 15px;
@@ -267,10 +259,9 @@ img {
   font-size: 14px;
 }
 
-/* 8. МОДАЛЬНОЕ ОКНО */
 .modal {
-  display: none; /* Скрыто по умолчанию */
-  position: fixed; /* Поверх всего экрана */
+  display: none; 
+  position: fixed; 
   inset: 0;
   z-index: 1000;
   align-items: center;
@@ -279,13 +270,13 @@ img {
 }
 
 .modal.open {
-  display: flex; /* Показываем, когда добавляется класс .open */
+  display: flex; 
 }
 
 .modal__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный чёрный фон */
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .modal__box {
@@ -332,7 +323,6 @@ body.dark-theme .modal__box {
   font-weight: 700;
 }
 
-/* 9. ПОДВАЛ */
 .footer {
   border-top: 1px solid #CBD5E0;
   padding: 20px 0;
@@ -350,17 +340,15 @@ body.dark-theme .modal__box {
   color: var(--text);
   text-decoration: none;
 }
-
-/* 10. АДАПТИВНОСТЬ (Для телефонов до 768px) */
+/* телефон */
 @media (max-width: 768px) {
   .burger-btn {
-    display: block; /* Показываем иконку бургера */
+    display: block; 
   }
   .header__btn {
-    display: none; /* Прячем кнопку "Contact me" в шапке */
+    display: none; 
   }
   
-  /* Делаем выпадающее меню */
   .nav {
     display: none;
     position: absolute;
@@ -380,7 +368,6 @@ body.dark-theme .modal__box {
     text-align: center;
   }
 
-  /* Отключаем колонки, делаем блоки друг под другом */
   .hero, .about__row, .contact__row {
     flex-direction: column;
     gap: 30px;
