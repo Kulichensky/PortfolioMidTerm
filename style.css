@@ -1,0 +1,402 @@
+/* 1. ПЕРЕМЕННЫЕ (Цвета сайта) */
+:root {
+  --primary: #0F5257;
+  --bg: #FFFFFF;
+  --text: #303030;
+  --text-gray: #4A5568;
+  --dark: #303030;
+}
+
+body.dark-theme {
+  --bg: #1A202C;
+  --text: #FFFFFF;
+  --text-gray: #CBD5E0;
+}
+
+/* 2. БАЗОВЫЕ НАСТРОЙКИ (Сброс отступов) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Плавная прокрутка к секциям */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  overflow-x: hidden; /* Скрываем случайный скролл по горизонтали */
+}
+
+/* Ограничитель ширины сайта по центру */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* Скрытие текста (для доступности) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* 3. ШАПКА И НАВИГАЦИЯ */
+.header {
+  background-color: var(--bg);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.nav__link:hover {
+  color: var(--primary);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.action-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.theme-btn, .burger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger-btn {
+  display: none;
+}
+
+/* 4. КНОПКИ */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: 1px solid var(--primary);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* 5. СЕКЦИИ И СЕТКА (Flexbox) */
+.hero, .about__row, .contact__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero {
+  padding: 50px 0 70px 0;
+}
+
+.hero__col, .about__col, .contact__col {
+  flex: 1; /* Колонки занимают равное место */
+}
+
+.sub-badge {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero__title {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 10px 0 16px 0;
+  line-height: 1.2;
+}
+
+.hero__desc, .about__desc {
+  color: var(--text-gray);
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.image-card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card-tag {
+  position: absolute;
+  font-size: 11px;
+  color: #FFFFFF;
+  background: rgba(15, 82, 87, 0.6);
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.card-tag--right { 
+  bottom: 15px; 
+  right: 15px; 
+}
+
+/* 6. ОБО МНЕ И КОНТАКТЫ */
+.about, .contact {
+  padding: 40px 0 60px 0;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+.title-line {
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.about__photo {
+  border-radius: 6px;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  border-top: 1px solid #CBD5E0;
+  padding-top: 20px;
+}
+
+.stat-num {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 7. ФОРМА */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* 8. МОДАЛЬНОЕ ОКНО */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Поверх всего экрана */
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex; /* Показываем, когда добавляется класс .open */
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный чёрный фон */
+}
+
+.modal__box {
+  position: relative;
+  background: #E2E8F0;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 8px;
+  z-index: 1001;
+  text-align: center;
+}
+
+body.dark-theme .modal__box {
+  background: #2D3748;
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__close-img {
+  width: 16px;
+  height: 16px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.skill-pill {
+  background: var(--dark);
+  color: #FFFFFF;
+  padding: 14px 0;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* 9. ПОДВАЛ */
+.footer {
+  border-top: 1px solid #CBD5E0;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.footer__link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* 10. АДАПТИВНОСТЬ (Для телефонов до 768px) */
+@media (max-width: 768px) {
+  .burger-btn {
+    display: block; /* Показываем иконку бургера */
+  }
+  .header__btn {
+    display: none; /* Прячем кнопку "Contact me" в шапке */
+  }
+  
+  /* Делаем выпадающее меню */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    padding: 15px 20px;
+    border-bottom: 1px solid #CBD5E0;
+  }
+  .nav.open {
+    display: block;
+  }
+  .nav__list {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* Отключаем колонки, делаем блоки друг под другом */
+  .hero, .about__row, .contact__row {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  .hero__title {
+    font-size: 28px;
+  }
+  .hero__buttons {
+    flex-direction: column;
+  }
+  .form-row, .stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contact-form {
+    text-align: left;
+  }
+}
